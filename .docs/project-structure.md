@@ -20,6 +20,20 @@ The basic repository extends Repository. Spring Boot team suggest to consider ho
 
 More complex repository interfaces are ListCrudRepository or JpaRepository.
 
-https://docs.spring.io/spring-data/jpa/reference/jpa/getting-started.html
+Ref: https://docs.spring.io/spring-data/jpa/reference/jpa/getting-started.html
 
 ---
+
+## Creation and Update timestamps
+
+by project standard, we will use:
+
+```java
+@CreationTimestamp
+private LocalDateTime createdAt;
+
+@UpdateTimestamp
+private LocalDateTime updatedAt;
+```
+
+Ref: https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#mapping-generated-UpdateTimestamp
