@@ -1,9 +1,11 @@
 package com.bookmark.bookmark;
 
+import com.bookmark.bookmark.customer.CustomerRepository;
 import com.bookmark.bookmark.order.Order;
 import com.bookmark.bookmark.order.OrderRepository;
 import com.bookmark.bookmark.order.dtos.CreateOrderDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,6 +31,13 @@ public class OrderTests {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @BeforeEach
+    public void setup() {
+        customerRepository.deleteAll();
+    }
 
     @Test
     void createOrderWithoutCustomer_ReturnsCreatedOrder() throws Exception {

@@ -12,12 +12,10 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
 
     private final OrderService orderService;
-    private final CustomerService customerService;
 
     @Autowired
     public OrderController(OrderService orderService, CustomerService customerService) {
         this.orderService = orderService;
-        this.customerService = customerService;
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
