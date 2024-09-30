@@ -7,3 +7,4 @@ public enum OrderStatus {
     QUOTE,
     IN_PROGRESS;
 }
+
