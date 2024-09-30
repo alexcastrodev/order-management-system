@@ -5,18 +5,16 @@ After learning many Java concepts and practicing the language, I will develop an
 ## Technologies
 
 - Spring Boot
-  - JPA
-  - Test
-    - JUnit
-  - Validations
-  - Web
- - Docker
+    - JPA
+    - Test
+        - JUnit
+    - Validations
+    - Web
+- Docker
 
 # How to run
 
 ## Application
-
-
 
 ## Test
 
