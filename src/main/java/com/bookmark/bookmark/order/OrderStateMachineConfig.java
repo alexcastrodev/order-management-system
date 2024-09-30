@@ -10,7 +10,7 @@ import java.util.EnumSet;
 
 @Configuration
 @EnableStateMachine
-public class OrderState extends EnumStateMachineConfigurerAdapter<OrderStatus, OrderStatusEvents> {
+public class OrderStateMachineConfig extends EnumStateMachineConfigurerAdapter<OrderStatus, OrderStatusEvents> {
     @Override
     public void configure(StateMachineTransitionConfigurer<OrderStatus, OrderStatusEvents> transitions) throws Exception {
         transitions.
@@ -24,6 +24,8 @@ public class OrderState extends EnumStateMachineConfigurerAdapter<OrderStatus, O
     public void configure(StateMachineStateConfigurer<OrderStatus, OrderStatusEvents> states) throws Exception {
         states.withStates()
                 .initial(OrderStatus.DRAFTING)
+                .end(OrderStatus.COMPLETED)
+                .end(OrderStatus.CANCELLED)
                 .states(EnumSet.allOf(OrderStatus.class));
     }
 }
